@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Luxurious Real Estate - Explore</title>
+  <link rel="stylesheet" href="../css/explore.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js'></script>
+</head>
+<body>
+    <header>
+        <div><a href="../templates/homepage.html">Luxurious Real Estate</a></div>
+        <div><a href="../templates/login.html">Login</a></div>
+    </header>
+    <h1 class="title">Explore</h1>
+    <div class="slider" x-data="{start: true, end: false}">
+    <div class="slider__content" x-ref="slider" x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+        <div class="slider__item">
+        <img class="slider__image" src="https://w0.peakpx.com/wallpaper/336/320/HD-wallpaper-house-houses-luxury-mansion-summer.jpg">
+        <div class="slider__info">
+            <h2>United States</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://e1.pxfuel.com/desktop-wallpaper/621/874/desktop-wallpaper-chinese-house-chinese-home.jpg">
+        <div class="slider__info">
+            <h2>China</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://wallpapercave.com/wp/wp7352271.jpg">
+        <div class="slider__info">
+            <h2>India</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://c1.wallpaperflare.com/preview/701/783/807/palace-hermitage-petersburg-st-petersburg-russia.jpg">
+        <div class="slider__info">
+            <h2>Russia</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://w0.peakpx.com/wallpaper/37/486/HD-wallpaper-japanese-garden-house-zen-japanese-lake-tatami-japan-green-oriental-garden-room.jpg">
+        <div class="slider__info">
+            <h2>Japan</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://w0.peakpx.com/wallpaper/126/333/HD-wallpaper-epic-castle-building-europe-german-home-mansion.jpg">
+        <div class="slider__info">
+            <h2>Germany</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://wallpapercosmos.com/w/full/c/3/7/1162381-2160x3840-samsung-4k-mansion-wallpaper-photo.jpg">
+        <div class="slider__info">
+            <h2>United Kingdom</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://e0.pxfuel.com/wallpapers/865/595/desktop-wallpaper-castle-of-chenonceau-france-iphone-8-7-6-6s.jpg">
+        <div class="slider__info">
+            <h2>France</h2>
+        </div>
+        </div>
+        <div class="slider__item">
+        <img class="slider__image" src="https://w0.peakpx.com/wallpaper/908/289/HD-wallpaper-summer-house-luxury-mansion-pattern-pool.jpg">
+        <div class="slider__info">
+            <h2>Brazil</h2>
+        </div>
+        </div>
+    </div>
+    <div class="slider__nav">
+        <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth * -1, behavior: 'smooth'});" x-bind:class="start ? '' : 'slider__nav__button--active'">Previous</button>
+        <button class="slider__nav__button" x-on:click="$refs.slider.scrollBy({left: $refs.slider.offsetWidth, behavior: 'smooth'});" x-bind:class="end ? '' : 'slider__nav__button--active'">Next</button>
+    </div>
+</div>  
+</body>
+</html>
